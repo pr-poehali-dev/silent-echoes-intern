@@ -16,7 +16,7 @@ export function Hero() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 px-4 py-2 rounded-full text-sm font-medium">
             <Icon name="MapPin" size={14} />
-            Грузоперевозки по всей территории США
+            Грузоперевозки по 19 штатам США
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-balance text-white">
@@ -26,7 +26,7 @@ export function Hero() {
           </h1>
 
           <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto text-balance leading-relaxed">
-            SaniansTeamLog — надёжный партнёр в грузовых перевозках. Доставляем товары и грузы по всем 50 штатам быстро, безопасно и по прозрачным ценам
+            SaniansTeamLog — надёжный партнёр в грузовых перевозках. Работаем в 19 штатах западной и центральной части США: от Калифорнии до Иллинойса
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
@@ -46,7 +46,7 @@ export function Hero() {
         {/* Stats */}
         <div className="grid grid-cols-3 gap-8 md:gap-16 max-w-3xl mx-auto mt-24 pt-16 border-t border-white/20">
           <div className="space-y-2">
-            <div className="text-4xl md:text-5xl font-light text-white">50</div>
+            <div className="text-4xl md:text-5xl font-light text-white">19</div>
             <div className="text-sm text-white/60">Штатов США</div>
           </div>
           <div className="space-y-2">
