@@ -6,6 +6,7 @@ import { ForDriver } from "@/components/ForDriver"
 import { FeaturedDestinations } from "@/components/FeaturedDestinations"
 import { WhyChooseUs } from "@/components/WhyChooseUs"
 import { PopularPackages } from "@/components/PopularPackages"
+import { AboutUs } from "@/components/AboutUs"
 import { Newsletter } from "@/components/Newsletter"
 import { Footer } from "@/components/Footer"
 
@@ -20,6 +21,7 @@ export default function Index() {
       <FeaturedDestinations />
       <WhyChooseUs />
       <PopularPackages />
+      <AboutUs />
       <Newsletter />
       <Footer />
     </main>
