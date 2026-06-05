@@ -76,8 +76,13 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>© 2023–2025 SaniansTeamLog. Все права защищены. Las Vegas, NV</p>
+        <div className="pt-8 border-t border-border space-y-4">
+          <div className="rounded-xl bg-muted/60 border border-border px-6 py-4 text-center">
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              <span className="font-semibold text-foreground">Дисклеймер:</span> Данный сайт создан в учебных целях и не предоставляет реальных услуг. Сайт сделан по мотивам видеоигры <span className="italic">American Truck Simulator</span>.
+            </p>
+          </div>
+          <p className="text-center text-sm text-muted-foreground">© 2023–2025 SaniansTeamLog. Все права защищены. Las Vegas, NV</p>
         </div>
       </div>
     </footer>
