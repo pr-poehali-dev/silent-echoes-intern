@@ -25,11 +25,12 @@ const perks = [
 ]
 
 const requirements = [
-  "CDL класса A (коммерческие права)",
-  "Опыт вождения от 1 года",
-  "Чистая история нарушений",
-  "Медицинская справка DOT",
-  "Право на работу в США",
+  { icon: "User", label: "Возраст", value: "от 25 до 50 лет" },
+  { icon: "CalendarCheck", label: "Стаж вождения", value: "не менее 2 лет" },
+  { icon: "Star", label: "Рейтинг водителя", value: "не ниже 1.0" },
+  { icon: "Biohazard", label: "Опасные грузы", value: "хотя бы 1 открытая категория" },
+  { icon: "Leaf", label: "Эко-вождение", value: "уровень 1/6 и выше" },
+  { icon: "Navigation", label: "Дальние перевозки", value: "уровень 1/6 и выше" },
 ]
 
 export function ForDriver() {
@@ -71,13 +72,16 @@ export function ForDriver() {
             <h3 className="text-2xl font-semibold mb-2">Требования к кандидату</h3>
             <p className="text-white/60 text-sm mb-8">Базовые условия для работы в нашей компании</p>
 
-            <ul className="space-y-4 mb-10">
+            <ul className="space-y-3 mb-10">
               {requirements.map((req, i) => (
-                <li key={i} className="flex items-center gap-3 text-white/80">
-                  <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center shrink-0">
-                    <Icon name="Check" size={13} className="text-green-400" />
+                <li key={i} className="flex items-center gap-3 bg-white/5 rounded-xl px-4 py-3">
+                  <div className="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center shrink-0">
+                    <Icon name={req.icon} size={15} className="text-green-400" />
                   </div>
-                  <span className="text-sm">{req}</span>
+                  <div className="flex-1 flex items-center justify-between gap-2">
+                    <span className="text-sm text-white/60">{req.label}</span>
+                    <span className="text-sm font-medium text-white text-right">{req.value}</span>
+                  </div>
                 </li>
               ))}
             </ul>
