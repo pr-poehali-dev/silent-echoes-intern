@@ -48,6 +48,8 @@ const states = [
   "Миссури", "Арканзас", "Луизиана", "Иллинойс",
 ]
 
+const comingSoon = ["Южная Дакота", "Британская Колумбия (Канада)"]
+
 export function FeaturedDestinations() {
   return (
     <section id="routes" className="py-32 bg-background">
@@ -111,7 +113,7 @@ export function FeaturedDestinations() {
                 <h3 className="text-2xl font-semibold">Зона покрытия</h3>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Работаем в <span className="font-semibold text-foreground">19 штатах</span> западной и центральной части США
+                Работаем в <span className="font-semibold text-foreground">19 штатах</span> западной и центральной части США. Скоро расширяем географию
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -122,6 +124,15 @@ export function FeaturedDestinations() {
                 >
                   <Icon name="Check" size={11} />
                   {state}
+                </span>
+              ))}
+              {comingSoon.map((state) => (
+                <span
+                  key={state}
+                  className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 bg-amber-50 text-amber-600 font-medium rounded-full border border-amber-200"
+                >
+                  <Icon name="Clock" size={11} />
+                  {state} — скоро
                 </span>
               ))}
             </div>
