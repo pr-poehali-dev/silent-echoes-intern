@@ -10,7 +10,7 @@ const photos = [
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900">
       {/* Background — главное фото грузовика */}
       <div className="absolute inset-0 z-0">
         <img

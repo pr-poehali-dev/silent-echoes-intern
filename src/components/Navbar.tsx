@@ -2,14 +2,20 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import Icon from "@/components/ui/icon"
 
+const navLinks = [
+  { href: "#hero", label: "Главная" },
+  { href: "#cargo", label: "Категории грузов" },
+  { href: "#client", label: "Клиенту" },
+  { href: "#driver", label: "Водителю" },
+  { href: "#about", label: "О нас" },
+]
+
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
+    const handleScroll = () => setIsScrolled(window.scrollY > 20)
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -23,47 +29,35 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center gap-2">
+          <a href="#hero" className="flex-shrink-0 flex items-center gap-2">
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
               <Icon name="Truck" size={18} className="text-primary-foreground" />
             </div>
-            <h1 className="text-xl font-bold tracking-tight">SaniansTeamLog</h1>
-          </div>
+            <span className="text-xl font-bold tracking-tight">SaniansTeamLog</span>
+          </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-12">
-            <a
-              href="#routes"
-              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
-            >
-              Маршруты
-            </a>
-            <a
-              href="#services"
-              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
-            >
-              Тарифы
-            </a>
-            <a href="#about" className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors">
-              О компании
-            </a>
-            <a
-              href="#contact"
-              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
-            >
-              Контакты
-            </a>
+          <div className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors whitespace-nowrap"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6">
               Получить расчёт
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <button className="lg:hidden p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <Icon name="X" size={24} /> : <Icon name="Menu" size={24} />}
           </button>
         </div>
@@ -71,21 +65,19 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-border">
+        <div className="lg:hidden bg-white border-t border-border">
           <div className="px-6 py-6 space-y-4">
-            <a href="#routes" className="block text-base font-medium text-foreground/70 hover:text-foreground">
-              Маршруты
-            </a>
-            <a href="#services" className="block text-base font-medium text-foreground/70 hover:text-foreground">
-              Тарифы
-            </a>
-            <a href="#about" className="block text-base font-medium text-foreground/70 hover:text-foreground">
-              О компании
-            </a>
-            <a href="#contact" className="block text-base font-medium text-foreground/70 hover:text-foreground">
-              Контакты
-            </a>
-            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-base font-medium text-foreground/70 hover:text-foreground"
+              >
+                {link.label}
+              </a>
+            ))}
+            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full mt-2">
               Получить расчёт
             </Button>
           </div>
