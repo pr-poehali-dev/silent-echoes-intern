@@ -14,7 +14,7 @@ export function Footer() {
               <h3 className="text-xl font-bold">SaniansTeamLog</h3>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Надёжные грузоперевозки по всей территории США с 2015 года
+              Усердно работаем для вас с 2023!
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -67,7 +67,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <Icon name="MapPin" size={14} className="mt-0.5 shrink-0" />
-                <span>123 Logistics Ave, Chicago, IL 60601</span>
+                <span>Las Vegas, NV</span>
               </li>
               <li><a href="#" className="hover:text-foreground transition-colors">Политика конфиденциальности</a></li>
               <li><a href="#" className="hover:text-foreground transition-colors">Условия перевозки</a></li>
@@ -77,7 +77,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>© 2025 SaniansTeamLog. Все права защищены.</p>
+          <p>© 2023–2025 SaniansTeamLog. Все права защищены. Las Vegas, NV</p>
         </div>
       </div>
     </footer>
