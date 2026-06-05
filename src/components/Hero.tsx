@@ -1,13 +1,24 @@
 import { Button } from "@/components/ui/button"
 import Icon from "@/components/ui/icon"
 
+const photos = [
+  "https://cdn.poehali.dev/projects/c8919c34-ec61-4af5-8bb9-67394c79336c/bucket/d2a0d5d3-7f16-4c14-acd3-52d5209f2102.jpg",
+  "https://cdn.poehali.dev/projects/c8919c34-ec61-4af5-8bb9-67394c79336c/bucket/f0ade905-9aea-493b-b257-e83d15666b12.jpg",
+  "https://cdn.poehali.dev/projects/c8919c34-ec61-4af5-8bb9-67394c79336c/bucket/f2aef654-d32e-45ad-87cb-a1714e77f538.jpg",
+  "https://cdn.poehali.dev/projects/c8919c34-ec61-4af5-8bb9-67394c79336c/bucket/6c077fdf-e0c0-40d6-bb72-a31ea787528f.jpg",
+]
+
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-900 to-slate-800">
-      {/* Background overlay with pattern */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900">
+      {/* Background — главное фото грузовика */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djZoNnYtNmgtNnptMCAwdi02aC02djZoNnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-50" />
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-slate-900/60 to-slate-800/80" />
+        <img
+          src={photos[0]}
+          alt="SaniansTeamLog грузовик"
+          className="w-full h-full object-cover opacity-50"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/50 to-slate-900/90" />
       </div>
 
       {/* Content */}
@@ -24,6 +35,11 @@ export function Hero() {
             <span className="block font-bold mt-2 text-blue-400">в любую точку</span>
             <span className="block text-white">США</span>
           </h1>
+
+          {/* Девиз */}
+          <p className="text-xl md:text-2xl text-green-400 font-semibold tracking-wide">
+            «Мы настоящие мастера 18-ти стальных колёс!»
+          </p>
 
           <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto text-balance leading-relaxed">
             SaniansTeamLog — надёжный партнёр в грузовых перевозках. Работаем в 19 штатах западной и центральной части США: от Калифорнии до Иллинойса
@@ -57,6 +73,15 @@ export function Hero() {
             <div className="text-4xl md:text-5xl font-light text-white">4.8</div>
             <div className="text-sm text-white/60">Рейтинг клиентов</div>
           </div>
+        </div>
+
+        {/* Photo strip */}
+        <div className="grid grid-cols-3 gap-3 mt-12">
+          {photos.slice(1).map((url, i) => (
+            <div key={i} className="rounded-xl overflow-hidden h-28 md:h-36">
+              <img src={url} alt={`Фото ${i + 2}`} className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300" />
+            </div>
+          ))}
         </div>
       </div>
     </section>
