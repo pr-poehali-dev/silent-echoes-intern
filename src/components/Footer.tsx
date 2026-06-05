@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react"
+import Icon from "@/components/ui/icon"
 
 export function Footer() {
   return (
@@ -7,126 +7,77 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-semibold">Horizon Voyages</h3>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                <Icon name="Truck" size={18} className="text-primary-foreground" />
+              </div>
+              <h3 className="text-xl font-bold">SaniansTeamLog</h3>
+            </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Создаём незабываемые путешествия по всему миру с 2010 года
+              Надёжные грузоперевозки по всей территории США с 2015 года
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Facebook className="h-5 w-5" />
+                <Icon name="Facebook" size={20} />
               </a>
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Instagram className="h-5 w-5" />
+                <Icon name="Instagram" size={20} />
               </a>
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Youtube className="h-5 w-5" />
+                <Icon name="Linkedin" size={20} />
               </a>
             </div>
           </div>
 
-          {/* Destinations */}
+          {/* Routes */}
           <div>
-            <h4 className="font-semibold mb-4">Направления</h4>
+            <h4 className="font-semibold mb-4">Маршруты</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Европа
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Азия
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Африка
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Америка
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Океания
-                </a>
-              </li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Восточное побережье</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Западное побережье</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Средний Запад</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Юг США</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Межштатные маршруты</a></li>
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Services */}
           <div>
-            <h4 className="font-semibold mb-4">Компания</h4>
+            <h4 className="font-semibold mb-4">Услуги</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  О нас
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Вакансии
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Пресса
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Блог
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Партнёры
-                </a>
-              </li>
+              <li><a href="#" className="hover:text-foreground transition-colors">FTL-перевозки</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">LTL-перевозки</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Экспресс-доставка</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Корпоративный договор</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Ответственное хранение</a></li>
             </ul>
           </div>
 
-          {/* Support */}
+          {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4">Поддержка</h4>
+            <h4 className="font-semibold mb-4">Контакты</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Центр помощи
-                </a>
+              <li className="flex items-center gap-2">
+                <Icon name="Phone" size={14} />
+                <a href="tel:+18001234567" className="hover:text-foreground transition-colors">+1 (800) 123-4567</a>
               </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Связаться с нами
-                </a>
+              <li className="flex items-center gap-2">
+                <Icon name="Mail" size={14} />
+                <a href="mailto:info@sanianslog.com" className="hover:text-foreground transition-colors">info@sanianslog.com</a>
               </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Политика конфиденциальности
-                </a>
+              <li className="flex items-start gap-2">
+                <Icon name="MapPin" size={14} className="mt-0.5 shrink-0" />
+                <span>123 Logistics Ave, Chicago, IL 60601</span>
               </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Условия использования
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Правила отмены
-                </a>
-              </li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Политика конфиденциальности</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Условия перевозки</a></li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>2025 Horizon Voyages. Все права защищены.</p>
+          <p>© 2025 SaniansTeamLog. Все права защищены.</p>
         </div>
       </div>
     </footer>
