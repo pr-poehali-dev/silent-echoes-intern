@@ -101,9 +101,11 @@ export function ForDriver() {
               ))}
             </ul>
 
-            <Button size="lg" className="w-full bg-green-500 text-white hover:bg-green-600 rounded-full h-14 text-base">
-              Откликнуться на вакансию
-              <Icon name="ArrowRight" size={20} className="ml-2" />
+            <Button size="lg" className="w-full bg-green-500 text-white hover:bg-green-600 rounded-full h-14 text-base" asChild>
+              <a href="mailto:sorokpatsnk@gmail.com?subject=Отклик на вакансию водителя — SaniansTeamLog&body=Здравствуйте! Хочу откликнуться на вакансию водителя в SaniansTeamLog.%0A%0AМоё имя:%0AОпыт вождения:%0AКатегория CDL:%0AКонтактный телефон:%0A%0AС уважением,">
+                Откликнуться на вакансию
+                <Icon name="ArrowRight" size={20} className="ml-2" />
+              </a>
             </Button>
 
             <p className="text-xs text-white/40 text-center mt-4">
