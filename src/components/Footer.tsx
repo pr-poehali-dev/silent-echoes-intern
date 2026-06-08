@@ -82,7 +82,7 @@ export function Footer() {
               <span className="font-semibold text-foreground">Дисклеймер:</span> Данный сайт создан в учебных целях и не предоставляет реальных услуг. Сайт сделан по мотивам видеоигры <span className="italic">American Truck Simulator</span>.
             </p>
           </div>
-          <p className="text-center text-sm text-muted-foreground">© 2023–2025 SaniansTeamLog. Все права защищены. Las Vegas, NV</p>
+          <p className="text-center text-sm text-muted-foreground">© 2023–2025 SaniansTeamLog. Все права защищены. Las Vegas, NV<span style={{opacity: 0.06, fontSize: "10px", userSelect: "none"}}> 🙂</span></p>
         </div>
       </div>
     </footer>
