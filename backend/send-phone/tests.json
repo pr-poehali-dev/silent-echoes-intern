@@ -1,0 +1,13 @@
+{
+  "tests": [
+    {
+      "name": "Отправка номера телефона",
+      "method": "POST",
+      "path": "/",
+      "body": {"phone": "+1 (702) 555-1234"},
+      "expectedStatus": 200,
+      "expectedBody": {"success": true},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
