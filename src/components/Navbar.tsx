@@ -51,8 +51,10 @@ export function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6">
-              Получить расчёт
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6" asChild>
+              <a href="mailto:sorokpatsnk@gmail.com?subject=Запрос расчёта стоимости перевозки — SaniansTeamLog&body=Здравствуйте! Прошу рассчитать стоимость перевозки.%0A%0AМаршрут (откуда → куда):%0AТип груза:%0AВес / габариты:%0AЖелаемые сроки:%0AКонтактный телефон / email:%0A%0AС уважением,">
+                Получить расчёт
+              </a>
             </Button>
           </div>
 
@@ -77,8 +79,10 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
-            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full mt-2">
-              Получить расчёт
+            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full mt-2" asChild>
+              <a href="mailto:sorokpatsnk@gmail.com?subject=Запрос расчёта стоимости перевозки — SaniansTeamLog&body=Здравствуйте! Прошу рассчитать стоимость перевозки.%0A%0AМаршрут (откуда → куда):%0AТип груза:%0AВес / габариты:%0AЖелаемые сроки:%0AКонтактный телефон / email:%0A%0AС уважением,">
+                Получить расчёт
+              </a>
             </Button>
           </div>
         </div>
