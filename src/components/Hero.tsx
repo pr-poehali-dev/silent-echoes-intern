@@ -49,12 +49,15 @@ export function Hero() {
             <Button
               size="lg"
               className="bg-blue-500 text-white hover:bg-blue-600 rounded-full px-8 h-14 text-base group"
+              asChild
             >
-              Рассчитать доставку
-              <Icon name="ArrowRight" size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
+              <a href="mailto:sorokpatsnk@gmail.com?subject=Запрос расчёта стоимости перевозки — SaniansTeamLog&body=Здравствуйте! Прошу рассчитать стоимость перевозки.%0A%0AМаршрут (откуда → куда):%0AТип груза:%0AВес / габариты:%0AЖелаемые сроки:%0AКонтактный телефон / email:%0A%0AС уважением,">
+                Рассчитать доставку
+                <Icon name="ArrowRight" size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-8 h-14 text-base border-2 border-white/30 bg-transparent text-white hover:bg-white/10">
-              Наши маршруты
+            <Button size="lg" variant="outline" className="rounded-full px-8 h-14 text-base border-2 border-white/30 bg-transparent text-white hover:bg-white/10" asChild>
+              <a href="#destinations">Наши маршруты</a>
             </Button>
           </div>
         </div>
