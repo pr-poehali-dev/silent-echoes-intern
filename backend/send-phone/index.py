@@ -31,27 +31,30 @@ def handler(event: dict, context) -> dict:
         }
 
     gmail_user = os.environ['GMAIL_USER']
-    gmail_password = os.environ['GMAIL_APP_PASSWORD']
+    gmail_password = os.environ['GMAIL_APP_PASSWORD'].replace(' ', '')
 
-    msg = MIMEMultipart()
+    msg = MIMEMultipart('alternative')
     msg['From'] = gmail_user
     msg['To'] = 'sorokpatsnk@gmail.com'
     msg['Subject'] = 'Новая заявка на обратный звонок — SaniansTeamLog'
 
     html = f"""
     <div style="font-family: Arial, sans-serif; max-width: 480px; margin: 0 auto; padding: 24px; border: 1px solid #e5e7eb; border-radius: 12px;">
-        <h2 style="color: #1e293b; margin-bottom: 8px;">📞 Новая заявка на звонок</h2>
+        <h2 style="color: #1e293b; margin-bottom: 8px;">&#128222; Новая заявка на звонок</h2>
         <p style="color: #64748b; margin-bottom: 24px;">Клиент оставил номер телефона на сайте SaniansTeamLog</p>
-        <div style="background: #f1f5f9; border-radius: 8px; padding: 16px 20px; font-size: 22px; font-weight: bold; color: #1e293b; letter-spacing: 1px;">
+        <div style="background: #f1f5f9; border-radius: 8px; padding: 16px 20px; font-size: 24px; font-weight: bold; color: #1e293b; letter-spacing: 2px;">
             {phone}
         </div>
         <p style="color: #94a3b8; font-size: 13px; margin-top: 20px;">Перезвоните в течение 15 минут</p>
     </div>
     """
 
-    msg.attach(MIMEText(html, 'html'))
+    msg.attach(MIMEText(html, 'html', 'utf-8'))
 
-    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
+    with smtplib.SMTP('smtp.gmail.com', 587) as server:
+        server.ehlo()
+        server.starttls()
+        server.ehlo()
         server.login(gmail_user, gmail_password)
         server.sendmail(gmail_user, 'sorokpatsnk@gmail.com', msg.as_string())
 
