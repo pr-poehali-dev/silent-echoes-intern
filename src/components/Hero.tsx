@@ -1,5 +1,7 @@
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import Icon from "@/components/ui/icon"
+import { RoutesMapModal } from "@/components/RoutesMapModal"
 
 const photos = [
   "https://cdn.poehali.dev/projects/c8919c34-ec61-4af5-8bb9-67394c79336c/bucket/d2a0d5d3-7f16-4c14-acd3-52d5209f2102.jpg",
@@ -9,7 +11,11 @@ const photos = [
 ]
 
 export function Hero() {
+  const [mapOpen, setMapOpen] = useState(false)
+
   return (
+    <>
+    <RoutesMapModal open={mapOpen} onClose={() => setMapOpen(false)} />
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900">
       {/* Background — главное фото грузовика */}
       <div className="absolute inset-0 z-0">
@@ -56,8 +62,13 @@ export function Hero() {
                 <Icon name="ArrowRight" size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-8 h-14 text-base border-2 border-white/30 bg-transparent text-white hover:bg-white/10" asChild>
-              <a href="#destinations">Наши маршруты</a>
+            <Button
+              size="lg"
+              variant="outline"
+              className="rounded-full px-8 h-14 text-base border-2 border-white/30 bg-transparent text-white hover:bg-white/10"
+              onClick={() => setMapOpen(true)}
+            >
+              Наши маршруты
             </Button>
           </div>
         </div>
@@ -88,5 +99,6 @@ export function Hero() {
         </div>
       </div>
     </section>
+    </>
   )
 }
