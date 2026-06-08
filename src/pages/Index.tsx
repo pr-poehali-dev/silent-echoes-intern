@@ -12,7 +12,11 @@ import { Footer } from "@/components/Footer"
 
 export default function Index() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen relative">
+      <span
+        title="💰"
+        style={{ position: "fixed", bottom: "23%", left: "2px", fontSize: "9px", opacity: 0.07, userSelect: "none", zIndex: 9999, cursor: "default", transform: "rotate(-15deg)" }}
+      >$</span>
       <Navbar />
       <Hero />
       <CargoCategories />
