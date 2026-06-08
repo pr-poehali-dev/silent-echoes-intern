@@ -92,9 +92,11 @@ export function FeaturedDestinations() {
 
                 <div className="flex items-center justify-between pt-4 border-t border-border">
                   <span className="text-sm font-semibold text-primary">{route.price}</span>
-                  <Button variant="ghost" size="sm" className="group/btn text-foreground hover:text-primary">
-                    Заказать
-                    <Icon name="ArrowRight" size={16} className="ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                  <Button variant="ghost" size="sm" className="group/btn text-foreground hover:text-primary" asChild>
+                    <a href={`mailto:sorokpatsnk@gmail.com?subject=Заявка на маршрут: ${encodeURIComponent(route.name)} — SaniansTeamLog&body=Здравствуйте! Хочу заказать перевозку по маршруту: ${encodeURIComponent(route.name)}.%0A%0AТип груза:%0AВес / габариты:%0AДата отправки:%0AКонтактный телефон / email:%0A%0AС уважением,`}>
+                      Заказать
+                      <Icon name="ArrowRight" size={16} className="ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                    </a>
                   </Button>
                 </div>
               </div>

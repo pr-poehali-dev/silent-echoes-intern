@@ -101,8 +101,10 @@ export function PopularPackages() {
                     <div className="text-xs text-muted-foreground mb-1">Стоимость</div>
                     <div className="text-2xl font-semibold text-primary">{pkg.price}</div>
                   </div>
-                  <Button className={`rounded-full ${index === 1 ? "bg-primary text-primary-foreground hover:bg-primary/90" : "bg-muted text-foreground hover:bg-muted/80"}`}>
-                    Заказать
+                  <Button className={`rounded-full ${index === 1 ? "bg-primary text-primary-foreground hover:bg-primary/90" : "bg-muted text-foreground hover:bg-muted/80"}`} asChild>
+                    <a href={`mailto:sorokpatsnk@gmail.com?subject=Заявка на тариф «${encodeURIComponent(pkg.title)}» — SaniansTeamLog&body=Здравствуйте! Хочу воспользоваться тарифом «${encodeURIComponent(pkg.title)}».%0A%0AМаршрут (откуда → куда):%0AТип груза:%0AВес / габариты:%0AДата отправки:%0AКонтактный телефон / email:%0A%0AС уважением,`}>
+                      Заказать
+                    </a>
                   </Button>
                 </div>
               </div>
