@@ -90,9 +90,11 @@ export function ForClient() {
             </div>
           </div>
           <div className="shrink-0">
-            <Button size="lg" className="bg-blue-500 text-white hover:bg-blue-600 rounded-full px-8 h-14 text-base">
-              Отправить груз
-              <Icon name="ArrowRight" size={20} className="ml-2" />
+            <Button size="lg" className="bg-blue-500 text-white hover:bg-blue-600 rounded-full px-8 h-14 text-base" asChild>
+              <a href="mailto:sorokpatsnk@gmail.com?subject=Заявка на отправку груза — SaniansTeamLog&body=Здравствуйте! Хочу отправить груз.%0A%0AМаршрут (откуда → куда):%0AТип груза:%0AВес / габариты:%0AДата отправки:%0AКонтактный телефон / email:%0A%0AС уважением,">
+                Отправить груз
+                <Icon name="ArrowRight" size={20} className="ml-2" />
+              </a>
             </Button>
           </div>
         </div>
